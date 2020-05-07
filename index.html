@@ -1,0 +1,66 @@
+<!-- Сообщаем браузеру как стоит обрабатывать эту страницу -->
+<!DOCTYPE html>
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+	<!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+	<head>
+		<!-- Заголовок страницы в браузере -->
+		<title>Знакомство с html - тегами 03. Forms</title>
+		<!-- Кодировка страницы -->
+		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+	</head>
+	<!-- Отображаемое тело страницы -->
+	<body>
+		<!-- action - указывает куда полетит эта форма, method - поумолчан - Get (передача в адресной строке), Post - передает данные скрытно, используя запрос браузера и позвол отправ больше данных(файлы и тд.) -->
+		<form action="#" method="Post" enctype="multipart/form-data"></form>
+		<!-- Прием данных от пользователя, type - метод приема данн от пользов. text - input примет обличие поля ввода.
+		type="tel" - переключ на телефонную клаву -->
+		<div> <!-- Для атрибута text, textarea - применим еще placeholder="..." - отобразит подпись внутри поля формы. Для всех тегов, кроме form можно применить атриб disable - блокир действия с полем и делает его серым и данные не попадут на сервер. Для всех интерактив тегов применим атриб tabindex="1", котор определяет порядок перехода между элементами при нажатии на клавишу TAB -->
+			<input disabled placeholder="Enter name" type="text" name="username" value="">
+		</div>
+		<br>
+		<div>
+			<input type="password" name="userpass" value="">
+		</div>
+		<div>
+			<!-- Переключатель - радиокнопка, name мож быть одинаковым, благодаря этому атриб объединяются в группы.
+			Для групп с типом radio tabindex долж б одинаковым -->
+			<p><input tabindex="1" type="radio" name="beer" value="lager" />Светлое</p>
+			<p><input tabindex="1" checked type="radio" name="beer" value="dark" />Темное</p>
+		</div>
+		<br>
+		<div>
+			<!-- checked - сразу выбрано какое значение по умолч. Долж быть разные значения атриб "name", иначе сервер не поймет что есть что -->
+			<p><input checked type="radio" name="beer2" value="lager" />Светлое_2</p>
+			<p><input type="radio" name="beer2" value="dark" />Темное_2</p>
+		</div>
+		<br>
+		<div>
+			<p><input checked type="checkbox" name="beer1" value="lager" />Светлое_1</p>
+			<p><input type="checkbox" name="beer2" value="dark" />Темное_2</p>
+			<p><input checked type="checkbox" name="beer3" value="dark" />Темное_3</p>
+		</div>
+		<br>
+		<div>
+			<p><input type="file" name="foto"></p>
+		</div>
+		<br>
+		<div> <!-- Поле для ввода текста, атрибуты размеров можно убрать, т.к. их контролируют в css, js -->
+			<textarea name="text"></textarea>
+		</div>
+		<br>
+		<div> <!-- Выпадающ список, select - контейнер, option - пункты для выбора, multiply - выбрать несколько из списка с зажатой CTRL -->
+			<select name="color"> 
+				<option value="red">Красный</option>
+				<option selected value="yellow">Желтый</option> <!-- selected - выбрано по умолчанию -->
+				<option value="blue">Синий</option>
+			</select>
+		</div>
+		<br>
+		<div> <!-- submit - отправляет все данные из формы на сервер, reset - форма очистится -->
+			<button type="submit">Отправить</button>
+		</div>
+	</body>
+</html>
+
+
